@@ -1,0 +1,14 @@
+
+ Performance counter stats for './nsequencebench 100000 vector':
+
+        414,753546      task-clock (msec)         #    0,999 CPUs utilized          
+                19      context-switches          #    0,046 K/sec                  
+                 0      cpu-migrations            #    0,000 K/sec                  
+               345      page-faults               #    0,832 K/sec                  
+     1 268 554 211      cycles                    #    3,059 GHz                    
+        73 878 482      instructions              #    0,06  insn per cycle         
+         9 860 226      branches                  #   23,774 M/sec                  
+           761 392      branch-misses             #    7,72% of all branches        
+
+       0,415162628 seconds time elapsed
+

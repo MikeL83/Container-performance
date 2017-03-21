@@ -1,0 +1,15 @@
+
+ Performance counter stats for './nsequencebench 100 std::vector' (5 runs):
+
+         5 305 691      cycles                                                        ( +-  1,28% )
+         9 157 603      instructions              #    1,73  insn per cycle           ( +-  0,09% )
+            49 591      cache-references                                              ( +- 12,60% )
+             6 271      cache-misses              #   12,646 % of all cache refs      ( +- 52,03% )
+           966 237      branches                                                      ( +-  0,19% )
+     <not counted>      branch-misses                                                 ( +- 70,27% )  (2,09%)
+               150      page-faults                                                   ( +-  0,34% )
+                 0      cpu-migrations                                              
+     <not counted>      LLC-load-misses                                               (0,00%)
+
+       0,002169063 seconds time elapsed                                          ( +-  4,78% )
+

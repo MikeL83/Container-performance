@@ -1,0 +1,15 @@
+
+ Performance counter stats for './nsequencebench 100 std::forward_list' (5 runs):
+
+         4 181 018      cycles                                                        ( +- 16,47% )
+         9 491 072      instructions              #    2,27  insn per cycle           ( +-  0,07% )
+            51 503      cache-references                                              ( +-  1,86% )
+             5 401      cache-misses              #   10,488 % of all cache refs      ( +- 47,26% )
+         1 050 707      branches                                                      ( +-  0,16% )
+             7 086      branch-misses             #    0,67% of all branches          ( +- 54,24% )  (28,17%)
+               151      page-faults                                                   ( +-  0,16% )
+                 0      cpu-migrations                                                ( +-100,00% )
+     <not counted>      LLC-load-misses                                               (0,00%)
+
+       0,002261821 seconds time elapsed                                          ( +-  2,32% )
+

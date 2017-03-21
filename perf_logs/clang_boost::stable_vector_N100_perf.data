@@ -1,0 +1,15 @@
+
+ Performance counter stats for './nsequencebench 100 boost::stable_vector' (5 runs):
+
+         3 071 956      cycles                                                        ( +- 43,90% )
+         8 327 704      instructions              #    2,71  insn per cycle           ( +-  0,21% )
+            75 608      cache-references                                              ( +-  3,01% )
+             6 825      cache-misses              #    9,027 % of all cache refs      ( +- 43,93% )
+         1 343 494      branches                                                      ( +-  0,20% )
+            29 150      branch-misses             #    2,17% of all branches          ( +- 40,85% )  (55,94%)
+               161      page-faults                                                   ( +-  1,17% )
+                 0      cpu-migrations                                              
+     <not counted>      LLC-load-misses                                               (0,00%)
+
+       0,002710145 seconds time elapsed                                          ( +-  0,74% )
+

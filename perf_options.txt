@@ -1,0 +1,2 @@
+-B -r 5 -e cycles,instructions,cache-references,cache-misses,branches,branch-misses,page-faults,cpu-migrations,LLC-load-misses                       
+

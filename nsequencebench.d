@@ -1,0 +1,1 @@
+nsequencebench.o: nsequencebench.cpp

@@ -1,0 +1,15 @@
+
+ Performance counter stats for './nsequencebench 100 std::list' (5 runs):
+
+         4 943 782      cycles                                                        ( +-  4,40% )
+         9 547 135      instructions              #    1,93  insn per cycle           ( +-  0,04% )
+            53 600      cache-references                                              ( +-  0,95% )
+             3 926      cache-misses              #    7,324 % of all cache refs      ( +- 49,75% )
+         1 064 862      branches                                                      ( +-  0,08% )
+             2 269      branch-misses             #    0,21% of all branches          ( +- 69,31% )  (7,26%)
+               156      page-faults                                                   ( +-  0,35% )
+                 0      cpu-migrations                                              
+     <not counted>      LLC-load-misses                                               (0,00%)
+
+       0,001954961 seconds time elapsed                                          ( +-  2,41% )
+

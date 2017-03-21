@@ -1,0 +1,15 @@
+
+ Performance counter stats for './nsequencebench 10000 boost::slist' (5 runs):
+
+     5 117 100 074      cycles                                                        ( +-  8,47% )  (56,71%)
+     1 455 740 111      instructions              #    0,28  insn per cycle           ( +-  6,20% )  (71,37%)
+        64 422 731      cache-references                                              ( +- 13,15% )  (71,56%)
+            65 084      cache-misses              #    0,101 % of all cache refs      ( +-  8,55% )  (71,76%)
+       430 477 225      branches                                                      ( +-  6,68% )  (71,99%)
+           614 842      branch-misses             #    0,14% of all branches          ( +-  9,07% )  (72,02%)
+               312      page-faults                                                   ( +-  0,41% )
+                 0      cpu-migrations                                                ( +-100,00% )
+            14 015      LLC-load-misses                                               ( +- 12,13% )  (56,77%)
+
+       1,658828353 seconds time elapsed                                          ( +-  8,32% )
+

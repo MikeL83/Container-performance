@@ -1,0 +1,15 @@
+
+ Performance counter stats for './nsequencebench 50000 boost::slist' (2 runs):
+
+    79 922 138 730      cycles                                                        ( +- 24,52% )  (57,14%)
+    10 359 954 822      instructions              #    0,13  insn per cycle           ( +- 22,18% )  (71,43%)
+     1 760 476 510      cache-references                                              ( +- 26,52% )  (71,44%)
+           384 701      cache-misses              #    0,022 % of all cache refs      ( +-  1,69% )  (71,44%)
+     3 099 176 054      branches                                                      ( +- 22,14% )  (71,45%)
+         1 443 131      branch-misses             #    0,05% of all branches          ( +-  1,05% )  (71,43%)
+               933      page-faults                                                 
+                 1      cpu-migrations                                                ( +-100,00% )
+           278 596      LLC-load-misses                                               ( +- 12,53% )  (57,13%)
+
+      25,587209661 seconds time elapsed                                          ( +- 24,53% )
+
