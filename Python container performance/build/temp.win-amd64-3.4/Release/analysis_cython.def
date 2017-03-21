@@ -1,3 +1,0 @@
-LIBRARY analysis_cython.pyd
-EXPORTS
-PyInit_analysis_cython
