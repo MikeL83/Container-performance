@@ -100,7 +100,7 @@ def run_benchmark():
 
 
 if __name__ == "__main__":
-    sudo_password = '#MikMasC++1#'
+    sudo_password = ''
 
     p = subprocess.Popen(['sudo', '-s'], stdin=subprocess.PIPE, stderr=subprocess.PIPE,
                          universal_newlines=True)
