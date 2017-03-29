@@ -82,23 +82,27 @@ def run(n, style):
     #    times)))
     return np.mean(times)
 
-def parseArgs():
+def handle_commandline():
     ap = argparse.ArgumentParser()
     ap.add_argument("-n",
                     "--numberofelem",
                     type=int,
                     required=True,
-                    help="number of conteiner elements")
+                    help="number of container elements")
     ap.add_argument("-s",
                     "--style",
                     required=True,
                     help="Which python style to use")
     args = vars(ap.parse_args())
-    return args
+
+    return (args['numberofelem'], args['style'])
+
+
+def main():
+    inputs = handle_commandline()
+    run(*inputs)
 
 
 if __name__ == "__main__":
-    n = parseArgs()
-
-    run(n['numberofelem'], n['style'])
+    main()
 
