@@ -8,10 +8,10 @@ SHELL := /bin/sh
 # GCC
 #CXX := g++
 # Clang
-CXX := clang++-3.9
+CXX := clang++-4.0
 INCLS := -I #/home/mikko/sw/include/benchmark/include
 CPPFLAGS := -MMD -MP $(INCLS)
-WARN := -Wall -pedantic -Werror
+WARN := -Wall -pedantic -Werror -Wextra
 OPTIM := -O3 -m64 -mtune=intel \
 	     -fno-omit-frame-pointer -fno-exceptions\
 		 -fno-rtti # -ftree-parallelize-loops=2
