@@ -6,18 +6,18 @@ SHELL := /bin/sh
 
 #Compiling
 # GCC
-CXX := g++
+CXX := g++-7
 # Clang
 #CXX := clang++-3.9
 INCLS := -I #/home/mikko/sw/include/benchmark/include
 CPPFLAGS := -MMD -MP $(INCLS)
-WARN := -Wall -pedantic -Werror
+WARN := -Wall -pedantic -Werror -Wextra
 OPTIM := -O3 -m64 -mtune=intel \
 	     -fno-omit-frame-pointer -fno-exceptions\
 		 -fno-rtti # -ftree-parallelize-loops=2
 DEBUG := -ggdb
 PROF := -g -pg
-ifeq ($(CXX),g++)
+ifeq ($(CXX),g++-7)
     CXXFLAGS := -std=c++1z -libstd=c++ -fdiagnostics-color=always $(OPTIM) $(WARN)
 else
     CXXFLAGS := -std=c++1z -stdlib=libc++ -fdiagnostics-color=always $(OPTIM) $(WARN)
