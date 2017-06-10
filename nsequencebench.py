@@ -29,7 +29,7 @@ def analysis(n):
     random.seed()
     while len(list_v) != 0:
         rand_idx = random.randint(0, len(list_v) - 1)
-        list_v.pop(rand_idx)
+        del list_v[rand_idx]
 
 
 #numpy

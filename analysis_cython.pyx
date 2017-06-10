@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+#cython: language_level=3, boundscheck=False, wraparound=False, nonecheck=False
+
 """
 
 Synopsis
@@ -21,4 +23,4 @@ def analysis_cython(int n):
     cdef int rand_idx
     while len(list_v) != 0:
         rand_idx = random.randint(0, len(list_v) - 1)
-        list_v.pop(rand_idx)
+        del list_v[rand_idx]
