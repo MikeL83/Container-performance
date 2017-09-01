@@ -17,7 +17,7 @@ import concurrent.futures
 import logging
 import time
 
-CLANG_FORMAT = 'clang-format-4.0'
+CLANG_FORMAT = 'clang-format'
 PYTHON_FORMATTER = 'yapf'
 PYTHON_FORMATTER_OPTIONS = "{based_on_style: chromium, indent_width: 4, spaces_before_comment = 4," \
                            "split_before_logical_operator = true}"
@@ -101,7 +101,7 @@ def format_code(args):
                 with concurrent.futures.ProcessPoolExecutor(
                         max_workers=multiprocessing.cpu_count()) as executor:
                     if os.path.isdir(path):
-                        for file_ in get_files(path, ('.h', '.cpp')):
+                        for file_ in get_files(path, ('.h', '.cpp', '.cc', '.c')):
                             cmd = "{} {} {} {}".format(CLANG_FORMAT, '-style=file', '-i', file_)
                             future = executor.submit(run_cmd, cmd)
                     else:
@@ -113,7 +113,7 @@ def format_code(args):
                         executor.shutdown()
             else:
                 if os.path.isdir(path):
-                    for file_ in get_files(path, ('.h', '.cpp')):
+                    for file_ in get_files(path, ('.h', '.cpp', '.cc', '.c')):
                         cmd = "{} {} {} {}".format(CLANG_FORMAT, '-style=file', '-i', file_)
                         res = run_cmd(cmd)
                 else:
@@ -134,7 +134,7 @@ def format_code(args):
                 with concurrent.futures.ProcessPoolExecutor(
                         max_workers=multiprocessing.cpu_count()) as executor:
                     if os.path.isdir(path):
-                        for file_ in get_files(path, ('.h', '.cpp'), True):
+                        for file_ in get_files(path, ('.h', '.cpp', '.cc', '.c'), True):
                             cmd = "{} {} {} {}".format(CLANG_FORMAT, '-style=file', '-i', file_)
                             future = executor.submit(run_cmd, cmd)
                     else:
@@ -146,7 +146,7 @@ def format_code(args):
                         executor.shutdown()
             else:
                 if os.path.isdir(path):
-                    for file_ in get_files(path, ('.h', '.cpp'), True):
+                    for file_ in get_files(path, ('.h', '.cpp', '.cc', '.c'), True):
                         cmd = "{} {} {} {}".format(CLANG_FORMAT, '-style=file', '-i', file_)
                         res = run_cmd(cmd)
                 else:

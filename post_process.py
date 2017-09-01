@@ -19,8 +19,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 from openpyxl import Workbook
 from matplotlib.ticker import MultipleLocator, FormatStrFormatter
-#majorLocator = MultipleLocator(20)
-#majorFormatter = FormatStrFormatter('%d')
+
+# majorLocator = MultipleLocator(20)
+# majorFormatter = FormatStrFormatter('%d')
 minorLocator = MultipleLocator(5)
 
 DB = {'gcc': {}, 'clang': {}}
@@ -131,8 +132,6 @@ class PostProcess:
         # Save the file
         wb.save("sample.xlsx")
 
-
-
     def plot(self):
 
         data = ''
@@ -187,8 +186,6 @@ class PostProcess:
                     plt.savefig('benchmarks_res_N1000.png', bbox_inches='tight', dpi='figure',
                                 format='png')
 
-
-
             with open(os.path.join(path, 'perf_results.json')) as perf_file:
                 perf_results = json.load(perf_file)
 
@@ -216,22 +213,22 @@ class PostProcess:
                     plt.xlabel("FOO")
                     plt.ylabel("FOO")
                     plt.title("Testing")
-                    #plt.yscale('log')
+                    # plt.yscale('log')
 
                     axes = plt.gca()
                     axes.set_xticklabels(['', 'std::vector', 'std::list', 'std::forward_list',
-              'boost::vector', 'boost::list', 'boost::slist',
-              'boost::stable_vector'], rotation=-22.5)
-                    axes.set_yticklabels([0,1,2])
+                                          'boost::vector', 'boost::list', 'boost::slist',
+                                          'boost::stable_vector'], rotation=-22.5)
+                    axes.set_yticklabels([0, 1, 2])
                     axes.set_ylim([0, 2])
-                    plt.yticks(np.array([0,1,2]))
-                    #axes.yaxis.set_major_locator(majorLocator)
-                    #axes.yaxis.set_major_formatter(majorFormatter)
+                    plt.yticks(np.array([0, 1, 2]))
+                    # axes.yaxis.set_major_locator(majorLocator)
+                    # axes.yaxis.set_major_formatter(majorFormatter)
 
                     # for the minor ticks, use no labels; default NullFormatter
                     axes.yaxis.set_minor_locator(minorLocator)
-                    #plt.minorticks_on()
-                    #plt.grid(b=True, which='major', linestyle='-')
+                    # plt.minorticks_on()
+                    # plt.grid(b=True, which='major', linestyle='-')
 
                     # x = np.arange(7)
                     # for i in range(len(data[0])):
@@ -243,8 +240,12 @@ class PostProcess:
                 plt.show()
 
 
-if __name__ == "__main__":
+def main():
     pp = PostProcess()
     pp.parse_perf_results()
     pp.export_to_excel()
     pp.plot()
+
+
+if __name__ == "__main__":
+    main()

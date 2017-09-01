@@ -99,8 +99,19 @@ def run_benchmark():
         # analyze with perf
 
 
-if __name__ == "__main__":
-    sudo_password = ''
+def parse_arguments():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("-p",
+                    "--password",
+                    default='',
+                    help="Your password for sudo")
+    args = vars(ap.parse_args())
+    return args
+
+
+def main():
+    args = parse_arguments()
+    sudo_password = args['password']
 
     p = subprocess.Popen(['sudo', '-s'], stdin=subprocess.PIPE, stderr=subprocess.PIPE,
                          universal_newlines=True)
@@ -108,3 +119,6 @@ if __name__ == "__main__":
     cmd = "{}".format("rm -r perf_logs && mkdir perf_logs")
     res = run_cmd(cmd)
     run_benchmark()
+
+if __name__ == "__main__":
+    main()
